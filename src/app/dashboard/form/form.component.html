@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Form Submition</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-container">
+
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Enter your name" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Enter your email Id" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="Qualification Completed" formControlName="qualification">
+                    <mat-option value="option">Bachlor</mat-option>
+                    <mat-option value="option">Masters</mat-option>
+                    <mat-option value="option">Diploma</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <textarea matInput placeholder="Enter your Query" formControlName="query"></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="warn">Click here to Submit</button>
+        </div>
+    </form>
+</mat-card>
