@@ -1,13 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { DataService } from '../../core/data.service'
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
-export interface UserElements {
-  name: string;
-  email: number;
-  qualification: number;
-  query: string;
-}
 
 @Component({
   selector: 'app-table',
@@ -18,16 +12,17 @@ export class TableComponent implements OnInit {
   displayedColumns: string[] = ['name', 'email', 'qualification', 'query'];
   dataSource;
   
-  constructor(private api: DataService) { 
-
-  }
+  constructor(private api: DataService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(){
     this.dataSource = new MatTableDataSource();
     this.api.getUserDetails()
     .subscribe((data) => {
       this.dataSource = data;
     })
   }
-
 }
