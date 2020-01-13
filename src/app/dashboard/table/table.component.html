@@ -1,4 +1,4 @@
-<mat-card ngIf="dataSource">
+<mat-card *ngIf="dataSource">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Users List</mat-card-title>
@@ -33,4 +33,4 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
-</mat-card ngIf="dataSource">
+</mat-card>
