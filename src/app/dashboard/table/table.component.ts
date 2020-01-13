@@ -23,11 +23,11 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-        this.dataSource = new MatTableDataSource();
-        this.api.getUserDetails()
-        .subscribe((data) => {
-          this.dataSource = data;
-        })
+    this.dataSource = new MatTableDataSource();
+    this.api.getUserDetails()
+    .subscribe((data) => {
+      this.dataSource = data;
+    })
   }
 
 }

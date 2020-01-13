@@ -26,6 +26,7 @@ export class FormComponent implements OnInit {
     .subscribe(  
       data  => {
         console.log("POST Request is successful ", data);
+        this.form.reset();
       },
       error  => {        
         console.log("Error", error);        
